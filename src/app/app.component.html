@@ -1,11 +1,9 @@
 <h1>Tugas 1 Angular</h1>
-<input type="text" id="input">
-<button id="submit" onclick="hitung()">masuk</button>
+<p>Masukkan row, column (Cth: 2,3)</p>
+<input [(ngModel)]="input"  type="text" >
+<button id="submit" (click)="hitung()">masuk</button>
 <br><br>
-<p id="giliran">Giliran 1</p>
-<p id="jawaban"></p>
-<p id="pemenang"></p>
-
-<script type="text/javascript">
-  document.getElementById("jawaban").innerHTML = "*****<br>*****<br>*****<br>*****<br>*****";
-</script>
+{{input}} <br>
+<p>{{giliran}}</p>
+<p [innerHTML]="jawaban"></p>
+<p>{{pemenang}}</p>
