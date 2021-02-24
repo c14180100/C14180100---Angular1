@@ -38,12 +38,12 @@ export class AppComponent {
       for (var j = 0; j < 5; j++) {
         if (proses[i][j] == giliran) {
           counter++;
+          if (counter >= 4) {
+            menang = giliran;
+          }
         } else {
           counter = 0;
         }
-      }
-      if (counter >= 4) {
-        menang = giliran;
       }
     }
 
@@ -54,12 +54,12 @@ export class AppComponent {
         for (var j = 0; j < 5; j++) {
           if (proses[j][i] == giliran) {
             counter++;
+            if (counter >= 4) {
+              menang = giliran;
+            }
           } else {
             counter = 0;
           }
-        }
-        if (counter >= 4) {
-          menang = giliran;
         }
       }
     }
@@ -78,8 +78,7 @@ export class AppComponent {
     this.jawaban = jawabanFix;
 
     if (menang != "0") {
-      this.pemenang =
-        "Pemenangnya adalah " + giliran + " !";
+      this.pemenang = "Pemenangnya adalah " + giliran + " !";
     } else {
       if (giliran == "1") {
         giliran = "2";
